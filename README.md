@@ -155,7 +155,4 @@ With this setup:
 
 ```
 
----
 
-Would you like a [Remmina profile backup template](f) or help comparing [Remmina vs. command-line SSH usage](f)?
-```
