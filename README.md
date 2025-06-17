@@ -58,15 +58,24 @@ Use it to create and manage remote connections via RDP, VNC, or SSH.
    ```powershell
    ipconfig
    ```
-<img width="789" alt="02-IPconfig" src="https://github.com/user-attachments/assets/5bb32200-142a-4a51-a37a-1b79e3038b7c" />
+<img width="815" alt="02-IPconfig" src="https://github.com/user-attachments/assets/6b490186-f1aa-41ef-87c3-323e45f39dd3" />
 
-🔗 From Remmina:
+
+🔗 From Terminal:
 * Allow RDP through the firewall : sudo ufw allow 3389/tcp in bash
   <img width="878" alt="07-allow RDP" src="https://github.com/user-attachments/assets/9d617410-1f06-4517-a6c2-ab65a88537fd" />
 
-* Protocol: RDP
-* IP: Windows VM IP
+🔗 From Remmina:
+<img width="944" alt="10-RDP-Remmina" src="https://github.com/user-attachments/assets/4cee9770-490c-4844-94e6-dba5fb51df58" />
+
+* Protocol: RDP & IP: Windows VM IP: 192.168.0.199
+  <img width="944" alt="10-RDP-Remmina" src="https://github.com/user-attachments/assets/59f232e2-98b3-44bc-829c-9b062152d8ac" />
+
 * Username/Password: Windows login credentials
+<img width="875" alt="11-Username-Passwd" src="https://github.com/user-attachments/assets/6f78dc44-1da4-454e-a31d-221f238ab952" />
+
+* RDP Connection Established
+<img width="946" alt="12-RDP Connected" src="https://github.com/user-attachments/assets/55a363b4-3cd0-43ca-a0af-285f9624f4aa" />
 
 ---
 
