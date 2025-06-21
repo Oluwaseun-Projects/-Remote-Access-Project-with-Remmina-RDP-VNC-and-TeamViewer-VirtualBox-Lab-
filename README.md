@@ -1,13 +1,12 @@
- # 🔁 Remote Access Project with Remmina, RDP, VNC, and TeamViewer (VirtualBox Lab)
+ # 🔁 Remote Access Project with RDP (Remmina) and TeamViewer (VirtualBox Lab)
 
 ## 🎯 Objective
 
 Showcase the use of **Remmina** on Linux to connect to remote systems, while also configuring:
 - RDP (Linux to Windows)
-- VNC (Windows or other Linux)
 - TeamViewer (both directions)
 
-All within a VirtualBox lab using Windows 11 and Ubuntu Desktop 22.04.
+All within a VirtualBox lab using Windows 10 and Ubuntu Desktop 22.04.
 
 ---
 
@@ -16,10 +15,10 @@ All within a VirtualBox lab using Windows 11 and Ubuntu Desktop 22.04.
 | Component     | Description                            |
 |--------------|----------------------------------------|
 | Virtualization | VirtualBox                            |
-| Windows Client | Windows 11 VM                         |
+| Windows Client | Windows 10 VM                         |
 | Linux Client   | Ubuntu Desktop 22.04 VM               |
-| Networking     | Host-Only Adapter / Bridged Adapter   |
-| Remote Tools   | Remmina, xrdp, TigerVNC, TeamViewer   |
+| Networking     | Bridged Adapter   |
+| Remote Tools   | Remmina, TeamViewer   |
 
 ---
 
@@ -41,10 +40,9 @@ remmina
 Use it to create and manage remote connections via RDP, VNC, or SSH.
 <img width="905" alt="01-lauch remmina" src="https://github.com/user-attachments/assets/8d390c44-32a5-481f-9476-48ef365ef5d2" />
 
-
 ---
 
-## 🖥️ Step 2: Enable RDP on Windows 11 VM
+## 🖥️ Step 2: Enable RDP on Windows 10 VM
 
 1. Open **System > Remote Desktop**
    <img width="833" alt="03-Remote" src="https://github.com/user-attachments/assets/19913c86-d599-4cf4-8caa-4014e7b0e121" />
@@ -79,27 +77,7 @@ Use it to create and manage remote connections via RDP, VNC, or SSH.
 
 ---
 
-## 🔍 Step 3: VNC Access to/from Linux
-
-### 📡 Linux as VNC Server (optional)
-
-```bash
-sudo apt install tigervnc-standalone-server -y
-vncpasswd
-vncserver
-```
-
-🟢 From Remmina: create a **VNC connection** using IP: `127.0.0.1:5901` or `<host-ip>:1`
-
-### 🖥️ Windows as VNC Server
-
-Install [TightVNC](https://www.tightvnc.com/download.php) or \[UltraVNC] on Windows.
-
-🟢 From Remmina: create a **VNC session**, provide Windows IP and password.
-
----
-
-## 🤝 Step 4: TeamViewer on Both Systems
+## 🤝 Step 3: TeamViewer on Both Systems
 
 ### On Linux:
 
@@ -114,6 +92,23 @@ Install TeamViewer and share the ID and password.
 
 🟢 Either OS can connect to the other using TeamViewer ID.
 
+-  **Screenshots:**
+-  Launch Teamviewer in Linux
+- <img width="1014" alt="15-Launch Teamvier Linux" src="https://github.com/user-attachments/assets/51caa91b-f3d4-4ceb-ae10-1cf8f4075ed4" />
+
+- ID and Passowrd generated
+- <img width="709" alt="16-ID Pass Linux" src="https://github.com/user-attachments/assets/474dac2b-538a-4e65-87dc-2b1563c4ea57" />
+
+- Copy Windows ID
+- <img width="1015" alt="17-copy windows ID" src="https://github.com/user-attachments/assets/59423d38-81e6-4bc9-99cc-d6dcb3e976e3" />
+
+- Authenticate with Windows password
+- <img width="710" alt="18-Authenticate" src="https://github.com/user-attachments/assets/f3c6ff68-ca62-4d4a-8847-5e54b2b13877" />
+
+- Connection Established. 
+- <img width="1121" alt="19-Connection established " src="https://github.com/user-attachments/assets/d4056098-4f37-48cb-8fbc-7988428bfb68" />
+
+
 ---
 
 ## 🔐 Firewall & Port Notes
@@ -121,7 +116,6 @@ Install TeamViewer and share the ID and password.
 | Tool       | Port     | Protocol |
 | ---------- | -------- | -------- |
 | RDP        | 3389     | TCP      |
-| VNC        | 5901+    | TCP      |
 | TeamViewer | 443/5938 | TCP      |
 
 Use `ufw allow` and `netstat -tuln` as needed to open/check ports.
@@ -131,7 +125,7 @@ Use `ufw allow` and `netstat -tuln` as needed to open/check ports.
 ## 🧠 Skills Demonstrated
 
 * Installation and configuration of remote access software
-* Use of Remmina to manage RDP, VNC, SSH from Linux
+* Use of Remmina to manage RDP, SSH from Linux
 * Understanding of ports, security, and user credentials
 * Testing remote access from both directions (Windows ↔ Linux)
 * Secure communication over LAN and internet
@@ -142,26 +136,16 @@ Use `ufw allow` and `netstat -tuln` as needed to open/check ports.
 
 With this setup:
 
-* Remmina manages **RDP/VNC/SSH sessions** easily from Linux
+* Remmina manages **RDP/SSH sessions** easily from Linux
 * Windows RDP is accessible from Linux
-* VNC works across both systems
 * TeamViewer provides a cloud-based alternative
-
----
-
-## 🚀 Optional Enhancements
-
-* Use SSH tunneling in Remmina for secure VNC/remote connections
-* Test multiple remote sessions and compare performance
-* Enable dynamic DNS for external access (TeamViewer not required)
 
 ---
 
 ## 📌 Notes
 
 * Ensure both VMs are powered and reachable (use `ping`)
-* TeamViewer requires internet; RDP/VNC are local unless port forwarded
+* TeamViewer requires internet; RDP is local unless port forwarded
 
-```
 
 
